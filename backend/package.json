@@ -6,6 +6,7 @@
     "type": "module",
     "scripts": {
         "start": "tsx index.ts",
+        "prod": "tsx dist/index.js",
         "watch": "tsx watch index.ts",
         "build": "tsc -b",
         "lint": "eslint .",
