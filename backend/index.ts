@@ -1,11 +1,12 @@
 import express, {type Request} from "express";
 import morgan from "morgan";
+import cors from "cors";
 
 import data from "./data.json" with { type: "json" };
 import type PhoneBookEntry from "./types/PhoneBookEntries.ts";
 import type Person from "./types/Person.js";
 
-const PORT = 8000;
+const PORT = process.env.PORT ?? 3001;
 const app = express();
 
 const morganMiddleware = morgan((tokens, req: Request) => {
@@ -16,6 +17,7 @@ const morganMiddleware = morgan((tokens, req: Request) => {
 
 app.use(express.json());
 app.use(morganMiddleware);
+app.use(cors());
 
 
 let phoneBookEntries = data as PhoneBookEntry[];
