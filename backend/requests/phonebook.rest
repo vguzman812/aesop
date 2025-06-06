@@ -1,0 +1,19 @@
+@root = http://localhost:8000
+@persons_url = {{root}}/api/persons
+@id = 1
+
+GET {{root}}/info
+###
+GET {{persons_url}}
+###
+GET {{persons_url}}/{{id}}
+###
+DELETE {{persons_url}}/{{id}}
+###
+POST {{persons_url}}
+Content-Type: application/json
+
+{
+    "name": "John Hitchcock",
+    "number": "123-456-7890"
+}

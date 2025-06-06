@@ -26,4 +26,5 @@
         /* If your code runs in the DOM: */
         "lib": ["es2022", "dom", "dom.iterable"]
     },
+    "exclude": ["node_modules", "dist", "eslint.config.mjs"]
 }
