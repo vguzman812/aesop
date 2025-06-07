@@ -1,6 +1,5 @@
 import express, {type Request} from "express";
 import morgan from "morgan";
-import cors from "cors";
 
 import data from "./data.json" with { type: "json" };
 import type PhoneBookEntry from "./types/PhoneBookEntries.ts";
@@ -17,7 +16,6 @@ const morganMiddleware = morgan((tokens, req: Request) => {
 
 app.use(express.json());
 app.use(morganMiddleware);
-app.use(cors());
 app.use(express.static("dist"));
 
 
