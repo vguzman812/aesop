@@ -18,6 +18,7 @@ const morganMiddleware = morgan((tokens, req: Request) => {
 app.use(express.json());
 app.use(morganMiddleware);
 app.use(cors());
+app.use(express.static("dist"));
 
 
 let phoneBookEntries = data as PhoneBookEntry[];
