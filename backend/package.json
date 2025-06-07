@@ -10,7 +10,7 @@
         "watch": "tsx watch index.ts",
         "lint": "eslint .",
         "test": "echo \"Error: no test specified\" && exit 1",
-        "build:frontend": "pushd ../frontend && pnpm install && pnpm run build && popd",
+        "build:frontend": "(cd ../frontend && pnpm install && pnpm run build)",
         "postbuild:frontend": "rm -rf dist/frontend && mkdir -p dist/frontend && cp -R ../frontend/dist/* dist/frontend/",
         "build:backend": "tsc -b",
         "build": "npm run build:frontend && npm run build:backend && npm run postbuild:frontend"
