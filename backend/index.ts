@@ -23,10 +23,6 @@ app.use(express.static("dist"));
 
 let phoneBookEntries = data as PhoneBookEntry[];
 
-app.get("/", (request, response) => {
-    response.send("<h1>Hello World!</h1>");
-});
-
 app.get("/info", (request, response) => {
     response.send(
         `<p>Phonebook has info for ${phoneBookEntries.length.toString()} people</p>

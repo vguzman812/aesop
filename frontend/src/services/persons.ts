@@ -1,5 +1,5 @@
 import axios from "axios";
-const baseUrl = "http://localhost:8000/api/persons";
+const baseUrl = "/api/persons";
 import { Person } from "../Types/types";
 
 const getAll = async (signal?: AbortSignal): Promise<Person[]> => {
