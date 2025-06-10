@@ -1,34 +1,32 @@
-{
-    "persons": [
-        {
-            "name": "John Doe",
-            "number": "041-23",
-            "id": "1"
-        },
-        {
-            "name": "John Smith",
-            "number": "12-43-234345",
-            "id": "3"
-        },
-        {
-            "name": "Jane Doe",
-            "number": "39-23-6423122",
-            "id": "4"
-        },
-        {
-            "id": "89ee",
-            "name": "Jane Smith",
-            "number": "69-69-69"
-        },
-        {
-            "id": "e9c9",
-            "name": "Archibald Reginald Roosevelt IV",
-            "number": "879-3450-9999"
-        },
-        {
-            "id": "7080",
-            "name": "Superman",
-            "number": "123-456-678"
-        }
-    ]
-}
+[
+    {
+        "name": "John Doe",
+        "number": "041-23",
+        "id": "1"
+    },
+    {
+        "name": "John Smith",
+        "number": "12-43-234345",
+        "id": "3"
+    },
+    {
+        "name": "Jane Doe",
+        "number": "39-23-6423122",
+        "id": "4"
+    },
+    {
+        "id": "89ee",
+        "name": "Jane Smith",
+        "number": "69-69-69"
+    },
+    {
+        "id": "e9c9",
+        "name": "Archibald Reginald Roosevelt IV",
+        "number": "879-3450-9999"
+    },
+    {
+        "id": "7080",
+        "name": "Superman",
+        "number": "123-456-678"
+    }
+]
