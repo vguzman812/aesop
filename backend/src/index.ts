@@ -1,8 +1,8 @@
 import express, {type Request} from "express";
 import morgan from "morgan";
 
-import data from "./data.json" with { type: "json" };
-import type PhoneBookEntry from "./types/PhoneBookEntries.ts";
+import data from "../data.json" with { type: "json" };
+import type PhoneBookEntry from "./types/PhoneBookEntries.js";
 import type Person from "./types/Person.js";
 
 const PORT = process.env.PORT ?? 3001;
