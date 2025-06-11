@@ -1,19 +1,98 @@
-@root = http://localhost:8000
-@persons_url = {{root}}/api/persons
-@id = 1
+### REST API Examples for Phonebook
+### You can use these with VS Code REST Client extension or similar tools
 
-GET {{root}}/info
-###
-GET {{persons_url}}
-###
-GET {{persons_url}}/{{id}}
-###
-DELETE {{persons_url}}/{{id}}
-###
-POST {{persons_url}}
-Content-Type: application/json
+@baseUrl = http://localhost:3001
+@personsUrl = {{baseUrl}}/api/persons
+@id = 6848e4ae5b797d44d39ef2bc
+@contentType = application/json
+
+### Get info about the phonebook
+GET {{personsUrl}}/info
+
+### Get all persons
+GET {{personsUrl}}
+
+### Search persons by name
+GET {{personsUrl}}/search?name=John
+
+### Get a specific person by ID
+GET {{personsUrl}}/{{id}}
+
+### Create a new person
+POST {{personsUrl}}
+Content-Type: {{contentType}}
 
 {
-    "name": "John Hitchcock",
-    "number": "123-456-7890"
+    "name": "John Doe",
+    "number": "463-456-7890"
 }
+
+### Create another person
+POST {{personsUrl}}
+Content-Type: {{contentType}}
+
+{
+    "name": "Jane Doe",
+    "number": "800-765-4321"
+}
+
+### Update a person completely (PUT)
+PUT {{personsUrl}}/{{id}}
+Content-Type: {{contentType}}
+
+{
+    "name": "John Doe Updated",
+    "number": "808-222-3333"
+}
+
+### Partially update a person (PATCH)
+PATCH {{personsUrl}}/{{id}}
+Content-Type: {{contentType}}
+
+{
+    "number": "999-888-7777"
+}
+
+### Update just the name
+PATCH {{personsUrl}}/{{id}}
+Content-Type: {{contentType}}
+
+{
+    "name": "John Doe Partially Updated"
+}
+
+### Delete a person
+DELETE {{personsUrl}}/{{id}}
+
+### Test validation errors
+
+### Missing name
+POST {{personsUrl}}
+Content-Type: {{contentType}}
+
+{
+    "number": "794-456-7890"
+}
+
+### Missing number
+POST {{personsUrl}}
+Content-Type: {{contentType}}
+
+{
+    "name": "Test Person"
+}
+
+### Invalid phone number (too short)
+POST {{personsUrl}}
+Content-Type: {{contentType}}
+
+{
+    "name": "Test Person",
+    "number": "123"
+}
+
+### Test invalid ID format
+GET {{personsUrl}}/invalid-id
+
+### Test non-existent endpoint
+GET {{baseUrl}}/api/nonexistent
