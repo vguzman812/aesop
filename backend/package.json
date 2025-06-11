@@ -5,9 +5,9 @@
     "main": "index.js",
     "type": "module",
     "scripts": {
-        "start": "tsx index.ts",
+        "start": "tsx src/index.ts",
         "prod": "tsx dist/index.js",
-        "watch": "tsx watch index.ts",
+        "watch": "tsx watch src/index.ts",
         "lint": "eslint .",
         "test": "echo \"Error: no test specified\" && exit 1",
         "build:frontend": "(cd ../frontend && pnpm install && pnpm run build)",
